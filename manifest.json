@@ -1,0 +1,19 @@
+{
+    "name": "AWS SSO Signin",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://ovation-io.awsapps.com/start/user-consent/authorize.html*"],
+            "js": ["click_allow.js"]
+        },
+        {
+            "matches": ["https://ovation-io.awsapps.com/start/user-consent/login-success.html"],
+            "js": ["close_tab.js"]
+        }
+      ],
+    "action": {}
+}
